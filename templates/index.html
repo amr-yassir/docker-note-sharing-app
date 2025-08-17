@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Notes</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>📝 My Notes</h1>
+        <form method="POST">
+            <textarea name="note" placeholder="Write your note here..."></textarea><br>
+            <button type="submit">Save Note</button>
+        </form>
+        <hr>
+        <div class="notes">
+            {% for note in notes %}
+                <div class="note">
+                    <p>🕒 {{ note[1] }}</p>
+                    <p>📌 {{ note[0] }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
+
